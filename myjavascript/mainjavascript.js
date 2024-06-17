@@ -1,4 +1,5 @@
 // Visualizzare in pagina 5 numeri casuali.
+const numeriVisualizzati= visualizzatoreNumeri();
 
 // Dopo aver visualizzato in pagina i 5 numeri casuali
 // far partire un timer di 30 secondi

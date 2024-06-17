@@ -1,6 +1,6 @@
 // Funzione per generare 5 numeri random da 1 a 100
 
-function generaNumeriCasualiUnivoci(quantita, max) {
+function generaNumeriCasuali(quantita, max) {
     // creazione di un array per contenere i numeri generati 
     const arrayNumeri = [];
     // inizio di un ciclo while per riempire l'array dedicato ad i numeri generati
@@ -11,10 +11,31 @@ function generaNumeriCasualiUnivoci(quantita, max) {
         if (!arrayNumeri.includes(numeroCasuale)) {
             arrayNumeri.push(numeroCasuale);
         }
+        console.log(numeroCasuale);
     } 
     // utilizzo di return per ritornare il valore di numeri e richiamarlo 
-    return numeri;
+    return arrayNumeri;
+    
 }
 
 
-// definite una funzione per la visualizzazione dei 5 numeri generati da 1 a 100
+// definire una funzione per la visualizzazione dei 5 numeri generati da 1 a 100
+
+function visualizzatoreNumeri() {
+    // selezionare elemento di riferimento per la creazione di elementi da inserire al suo interno
+    const numeriDiv = document.getElementById('numeri');
+    // riferimento della quantità dei numeri da inserire tra 1/100
+    const numeriCasuali = generaNumeriCasuali(5, 100); 
+    
+    // inizializzazione di un ciclo for inserendo elementi per quanti sono i numeri casuali generati "5" dopo di che termina 
+    for (let i = 0; i < numeriCasuali.length; i++) {
+        // creazione riferimento elementi p per l inserimento dei valori in pagina
+        const p = document.createElement('p');
+        // impostiamo il contenuto dell'elemento x il valore del numero generato
+        p.textContent = numeriCasuali[i];
+        // appendiamo l'elemento creato
+        numeriDiv.appendChild(p);
+        // console.log(numeriDiv);
+        console.log(p);
+    }
+}
