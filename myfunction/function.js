@@ -43,50 +43,50 @@ function visualizzatoreNumeri() {
     // far partire un timer di 30 secondi utilizzando set timeout / 30000        millisecondi equivale a 30 secondi
 
 
-setTimeout(
-    function() {
-        // creazione riferimento per nascondere i numeri al termine dei 30 secondi
-        nascondiNumeri(numeriDiv);
-        mostraInputNumeri();
-    }, 30000); 
+    setTimeout(
+        function() {
+            // creazione riferimento per nascondere i numeri al termine dei 30 secondi
+            nascondiNumeri(numeriDiv);
+            mostraInputNumeri();
+        }, 30000); 
 
-    // utilizzo funzione di rimozione innerhtml per nascondere i numeri 
-    function nascondiNumeri(numeriDiv) {
-        numeriDiv.innerHTML = ''; 
-    }
+        // utilizzo funzione di rimozione innerhtml per nascondere i numeri 
+        function nascondiNumeri(numeriDiv) {
+            numeriDiv.innerHTML = ''; 
+        }
 }
 
 // interazione utente inserimento dei 5 numeri visti precedentemente in pagina uno alla volta
 
-// Funzione per mostrare l'input per i numeri dell'utente
-function mostraInputNumeri() {
-    // selezione riferimento per modificarne lo style in block per visualizzare l interazione utente
-    document.getElementById('inputNumeri').style.display = 'block';
-}
+    // Funzione per mostrare l'input per i numeri dell'utente
+    function mostraInputNumeri() {
+        // selezione riferimento per modificarne lo style in block per visualizzare l interazione utente
+        document.getElementById('inputNumeri').style.display = 'block';
+    }
 
-// Funzione per verificare i numeri inseriti dall'utente
+    // Funzione per verificare i numeri inseriti dall'utente
 
-function verificaNumeri() {
-    // creazione riferimento input html 
-    const numeriUtenteInput = document.getElementById('numeriUtente').value;
-    // utilizzo di split per dividere una stringa in un array di sottostringhe
-    const numeriUtenteArray = numeriUtenteInput.split(',');
-    const numeriUtente = numeriUtenteArray.map(
-        function(numeroUtente) {
-            // utilizzo della proprietà trim per rimuovere gli spazi nell interazione utente 
-            return parseInt(numeroUtente.trim());
-    
-        }   
-);
-    // utilizzo della proprietà filter per filtrare gli elementi di un array in base a un criterio definito e restituisce solo quelli che corrispondono a tale criterio. in questo caso i numeri indovinati 
-    const numeriIndovinati = numeriUtente.filter(
-        function(numeroUtente) {
-            return arrayNumeri.includes(numeroUtente);
-        }
-    );
+    function verificaNumeri() {
+        // creazione riferimento input html 
+        const numeriUtenteInput = document.getElementById('numeriUtente').value;
+        // utilizzo di split per dividere una stringa in un array di sottostringhe
+        const numeriUtenteArray = numeriUtenteInput.split(',');
+        const numeriUtente = numeriUtenteArray.map(
+            function(numeroUtente) {
+                // utilizzo della proprietà trim per rimuovere gli spazi nell interazione utente 
+                return parseInt(numeroUtente.trim());
+        
+            }   
+        );
+        // utilizzo della proprietà filter per filtrare gli elementi di un array in base a un criterio definito e restituisce solo quelli che corrispondono a tale criterio. in questo caso i numeri indovinati 
+        const numeriIndovinati = numeriUtente.filter(
+            function(numeroUtente) {
+                return arrayNumeri.includes(numeroUtente);
+            }
+        );
 
-    const risultato = 'il totale dei numeri indovinati è ' + numeriIndovinati.length
-    const numeriGiusti = ' i numeri indovinati sono:' + numeriIndovinati.join(', ');
-    document.querySelector('.risultato').textContent = risultato;
-    document.querySelector(".numeri-indovinati").textContent= numeriGiusti;
-}
+        const risultato = 'il totale dei numeri indovinati è ' + numeriIndovinati.length
+        const numeriGiusti = ' i numeri indovinati sono:' + numeriIndovinati.join(', ');
+        document.querySelector('.risultato').textContent = risultato;
+        document.querySelector(".numeri-indovinati").textContent= numeriGiusti;
+    }
