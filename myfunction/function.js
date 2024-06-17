@@ -54,17 +54,13 @@ setTimeout(
     function nascondiNumeri(numeriDiv) {
         numeriDiv.innerHTML = ''; 
     }
-    
-  
 }
-
 
 // interazione utente inserimento dei 5 numeri visti precedentemente in pagina uno alla volta
 
-
-
 // Funzione per mostrare l'input per i numeri dell'utente
 function mostraInputNumeri() {
+    // selezione riferimento per modificarne lo style in block per visualizzare l interazione utente
     document.getElementById('inputNumeri').style.display = 'block';
 }
 
@@ -82,7 +78,7 @@ function verificaNumeri() {
     
         }   
 );
-// utilizzo della proprietà filter per filtrare gli elementi di un array in base a un criterio definito e restituisce solo quelli che corrispondono a tale criterio. in questo caso i numeri indovinati 
+    // utilizzo della proprietà filter per filtrare gli elementi di un array in base a un criterio definito e restituisce solo quelli che corrispondono a tale criterio. in questo caso i numeri indovinati 
     const numeriIndovinati = numeriUtente.filter(
         function(numeroUtente) {
             return arrayNumeri.includes(numeroUtente);
