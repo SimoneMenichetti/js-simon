@@ -11,7 +11,7 @@ function generaNumeriCasuali(quantita, max) {
         if (!arrayNumeri.includes(numeroCasuale)) {
             arrayNumeri.push(numeroCasuale);
         }
-        console.log(numeroCasuale);
+        console.log("I numeri univoci generati sono",numeroCasuale);
     } 
     // utilizzo di return per ritornare il valore di numeri e richiamarlo 
     return arrayNumeri;
@@ -36,6 +36,6 @@ function visualizzatoreNumeri() {
         // appendiamo l'elemento creato
         numeriDiv.appendChild(p);
         // console.log(numeriDiv);
-        console.log(p);
+        console.log("Gli elementi creati nel div numeri sono",p);
     }
 }
