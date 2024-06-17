@@ -24,20 +24,20 @@ function generaNumeriCasuali(quantita, max) {
 
 function visualizzatoreNumeri() {
     // selezionare elemento di riferimento per la creazione di elementi da inserire al suo interno
-    const numeriDiv = document.getElementById('numeri');
+    const numeriUl = document.getElementById('numeri');
     // riferimento della quantità dei numeri da inserire tra 1/100
     const numeriCasuali = generaNumeriCasuali(5, 100); 
     
     // inizializzazione di un ciclo for inserendo elementi per quanti sono i numeri casuali generati "5" dopo di che termina 
     for (let i = 0; i < numeriCasuali.length; i++) {
         // creazione riferimento elementi p per l inserimento dei valori in pagina
-        const p = document.createElement('p');
+        const li = document.createElement('li');
         // impostiamo il contenuto dell'elemento x il valore del numero generato
-        p.textContent = numeriCasuali[i];
+        li.textContent = numeriCasuali[i];
         // appendiamo l'elemento creato
-        numeriDiv.appendChild(p);
+        numeriUl.appendChild(li);
         // console.log(numeriDiv);
-        console.log("Gli elementi creati nel div numeri sono",p);
+        console.log("Gli elementi creati nel div numeri sono",li);
     }
 
     // far partire un timer di 30 secondi utilizzando set timeout / 30000        millisecondi equivale a 30 secondi
@@ -46,13 +46,13 @@ function visualizzatoreNumeri() {
     setTimeout(
         function() {
             // creazione riferimento per nascondere i numeri al termine dei 30 secondi
-            nascondiNumeri(numeriDiv);
+            nascondiNumeri(numeriUl);
             mostraInputNumeri();
         }, 30000); 
 
         // utilizzo funzione di rimozione innerhtml per nascondere i numeri 
-        function nascondiNumeri(numeriDiv) {
-            numeriDiv.innerHTML = ''; 
+        function nascondiNumeri(numeriUl) {
+            numeriUl.innerHTML = ''; 
         }
 }
 
