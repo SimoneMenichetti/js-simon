@@ -48,7 +48,7 @@ setTimeout(
         // creazione riferimento per nascondere i numeri al termine dei 30 secondi
         nascondiNumeri(numeriDiv);
         mostraInputNumeri();
-    }, 1000); 
+    }, 30000); 
 
     // utilizzo funzione di rimozione innerhtml per nascondere i numeri 
     function nascondiNumeri(numeriDiv) {
